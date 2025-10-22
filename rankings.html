@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TETRIS - Rankings</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/rankings.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">TETRIS</div>
+            <ul class="nav-menu">
+                <li><a href="game.html" class="nav-link">GAME</a></li>
+                <li><a href="register.html" class="nav-link">REGISTER</a></li>
+                <li><a href="login.html" class="nav-link">LOGIN</a></li>
+                <li><a href="rankings.html" class="nav-link active">RANKINGS</a></li>
+            </ul>
+            <div class="user-info" id="userInfo"></div>
+        </div>
+    </nav>
+
+    <!-- Rankings Container -->
+    <main class="rankings-container">
+        <div class="rankings-panel">
+            <h1 class="rankings-title">LEADERBOARD</h1>
+            <p class="rankings-subtitle">Top scores from all players</p>
+
+            <!-- Rankings Table -->
+            <div class="table-wrapper">
+                <table class="rankings-table" id="rankingsTable">
+                    <thead>
+                        <tr>
+                            <th>RANK</th>
+                            <th>PLAYER</th>
+                            <th>SCORE</th>
+                            <th>LEVEL</th>
+                            <th>LINES</th>
+                            <th>AVATAR</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rankingsBody">
+                        <tr>
+                            <td colspan="6" class="no-data">No players yet. Be the first to register and play!</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Back to Game Button -->
+            <div class="rankings-actions">
+                <button class="arcade-button" onclick="window.location.href='game.html'">PLAY GAME</button>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="js/rankings.js"></script>
+</body>
+</html>
