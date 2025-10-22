@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TETRIS - Play Game</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">TETRIS</div>
+            <ul class="nav-menu">
+                <li><a href="game.html" class="nav-link active">GAME</a></li>
+                <li><a href="register.html" class="nav-link">REGISTER</a></li>
+                <li><a href="login.html" class="nav-link">LOGIN</a></li>
+                <li><a href="rankings.html" class="nav-link">RANKINGS</a></li>
+            </ul>
+            <div class="user-info" id="userInfo"></div>
+        </div>
+    </nav>
+
+    <!-- Main Game Container -->
+    <main class="game-container">
+        <!-- Left Panel - User Info, Timer, and Controls -->
+        <div class="side-panel left-panel">
+            <!-- User Display -->
+            <div class="user-display">
+                <div class="user-initial" id="userInitial">?</div>
+                <div class="user-name" id="userName">Guest</div>
+            </div>
+
+            <!-- Timer Display -->
+            <div class="timer-display">
+                <div class="timer-label">TIME</div>
+                <div class="timer-value" id="timer">00:00:00</div>
+            </div>
+
+            <!-- Controls Info -->
+            <div class="controls-section">
+                <div class="panel-header" style="margin-top: 2rem;">CONTROLS</div>
+                <div class="controls-list">
+                    <div class="control-item">
+                        <span class="key-icon">←→</span>
+                        <span>Move</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="key-icon">↓</span>
+                        <span>Soft Drop</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="key-icon">↑</span>
+                        <span>Rotate</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="key-icon">SPACE</span>
+                        <span>Hard Drop</span>
+                    </div>
+                    <div class="control-item">
+                        <span class="key-icon">ESC</span>
+                        <span>Pause</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Center - Game Board -->
+        <div class="center-panel">
+            <div class="game-wrapper">
+                <canvas id="gameCanvas" width="300" height="600"></canvas>
+                <div id="gameOverlay" class="game-overlay hidden">
+                    <div class="overlay-content">
+                        <h2 id="overlayTitle">GAME OVER</h2>
+                        <p id="overlayMessage">Your Score: <span id="finalScore">0</span></p>
+                        <button class="arcade-button" onclick="location.reload()">PLAY AGAIN</button>
+                        <button class="arcade-button" onclick="window.location.href='rankings.html'">VIEW RANKINGS</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel - Next Piece and Score -->
+        <div class="side-panel right-panel">
+            <div class="panel-header">NEXT</div>
+            <canvas id="nextCanvas" width="120" height="120"></canvas>
+
+            <div class="score-section">
+                <div class="score-label">HIGH SCORE</div>
+                <div class="score-value" id="highScore">0</div>
+
+                <div class="score-label">SCORE</div>
+                <div class="score-value" id="score">0</div>
+
+                <div class="score-label">LEVEL</div>
+                <div class="score-value" id="level">1</div>
+
+                <div class="score-label">LINES</div>
+                <div class="score-value" id="lines">0</div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="js/game-init.js"></script>
+</body>
+</html>
