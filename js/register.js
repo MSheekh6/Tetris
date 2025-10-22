@@ -14,11 +14,6 @@ class RegistrationForm {
             input.addEventListener('blur', () => this.validateField(input));
             input.addEventListener('input', () => this.clearError(input));
         });
-
-        const avatarInputs = this.form.querySelectorAll('input[name="avatar"]');
-        avatarInputs.forEach(input => {
-            input.addEventListener('change', () => this.clearError(input));
-        });
     }
 
     validateField(field) {
@@ -57,15 +52,6 @@ class RegistrationForm {
             return false;
         }
 
-        return true;
-    }
-
-    validateAvatar() {
-        const avatar = this.form.querySelector('input[name="avatar"]:checked');
-        if (!avatar) {
-            this.showError('avatar', 'Please select an avatar');
-            return false;
-        }
         return true;
     }
 
@@ -129,7 +115,6 @@ class RegistrationForm {
         if (!this.validateField(confirmPassword)) isValid = false;
         if (!this.validateField(displayName)) isValid = false;
         if (!this.validateField(favoriteColor)) isValid = false;
-        if (!this.validateAvatar()) isValid = false;
 
         if (!isValid) {
             this.showMessage('Please fix the errors above', true);
@@ -150,15 +135,12 @@ class RegistrationForm {
             return;
         }
 
-        const avatar = this.form.querySelector('input[name="avatar"]:checked');
-
         const newUser = {
             username: username.value.trim(),
             email: email.value.trim(),
             password: password.value,
             displayName: displayName.value.trim(),
             favoriteColor: favoriteColor.value,
-            avatar: avatar.value,
             highScore: 0,
             level: 0,
             lines: 0,
