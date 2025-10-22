@@ -1,0 +1,192 @@
+.rankings-container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 2rem;
+}
+
+.rankings-panel {
+    background: rgba(26, 31, 58, 0.95);
+    border: 3px solid var(--border-color);
+    border-radius: 15px;
+    padding: 3rem;
+    box-shadow:
+        0 0 30px rgba(74, 79, 255, 0.4),
+        inset 0 0 30px rgba(74, 79, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.rankings-title {
+    font-size: 2rem;
+    color: var(--neon-yellow);
+    text-align: center;
+    margin-bottom: 1rem;
+    text-shadow:
+        0 0 10px var(--neon-yellow),
+        0 0 20px var(--neon-yellow);
+    letter-spacing: 0.2em;
+}
+
+.rankings-subtitle {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 2rem;
+}
+
+.rankings-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.7rem;
+}
+
+.rankings-table thead {
+    background: rgba(74, 79, 255, 0.2);
+    border-bottom: 2px solid var(--neon-cyan);
+}
+
+.rankings-table th {
+    padding: 1rem;
+    text-align: left;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px var(--neon-cyan);
+    letter-spacing: 0.1em;
+}
+
+.rankings-table tbody tr {
+    border-bottom: 1px solid rgba(74, 79, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.rankings-table tbody tr:hover {
+    background: rgba(0, 240, 255, 0.1);
+    box-shadow: inset 0 0 20px rgba(0, 240, 255, 0.2);
+}
+
+.rankings-table tbody tr.current-user {
+    background: rgba(0, 255, 65, 0.1);
+    border: 2px solid var(--neon-green);
+}
+
+.rankings-table tbody tr.current-user td {
+    color: var(--neon-green);
+    text-shadow: 0 0 5px var(--neon-green);
+}
+
+.rankings-table td {
+    padding: 1rem;
+    color: var(--text-primary);
+}
+
+.rankings-table td:first-child {
+    font-size: 1rem;
+    color: var(--neon-pink);
+    text-shadow: 0 0 10px var(--neon-pink);
+    font-weight: bold;
+}
+
+.rankings-table td:nth-child(3) {
+    color: var(--neon-yellow);
+    text-shadow: 0 0 5px var(--neon-yellow);
+}
+
+.no-data {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-secondary);
+    font-size: 0.7rem;
+}
+
+.avatar-display {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    background: rgba(10, 14, 39, 0.8);
+    font-size: 0.8rem;
+}
+
+.rankings-actions {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.rank-medal {
+    font-size: 1.2rem;
+}
+
+.rank-1 .rank-medal {
+    color: #ffd700;
+    text-shadow: 0 0 15px #ffd700;
+}
+
+.rank-2 .rank-medal {
+    color: #c0c0c0;
+    text-shadow: 0 0 15px #c0c0c0;
+}
+
+.rank-3 .rank-medal {
+    color: #cd7f32;
+    text-shadow: 0 0 15px #cd7f32;
+}
+
+@media (max-width: 768px) {
+    .rankings-container {
+        padding: 1rem;
+        margin: 2rem auto;
+    }
+
+    .rankings-panel {
+        padding: 2rem;
+    }
+
+    .rankings-title {
+        font-size: 1.5rem;
+    }
+
+    .rankings-subtitle {
+        font-size: 0.6rem;
+    }
+
+    .rankings-table {
+        font-size: 0.6rem;
+    }
+
+    .rankings-table th,
+    .rankings-table td {
+        padding: 0.7rem 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .rankings-panel {
+        padding: 1.5rem;
+    }
+
+    .rankings-title {
+        font-size: 1.2rem;
+    }
+
+    .rankings-table {
+        font-size: 0.5rem;
+    }
+
+    .rankings-table th,
+    .rankings-table td {
+        padding: 0.5rem 0.3rem;
+    }
+
+    .avatar-display {
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 0.6rem;
+    }
+}
