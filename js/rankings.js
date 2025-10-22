@@ -9,7 +9,7 @@ class RankingsTable {
         const users = JSON.parse(localStorage.getItem('tetrisUsers')) || [];
 
         if (users.length === 0) {
-            this.tableBody.innerHTML = '<tr><td colspan="6" class="no-data">No players yet. Be the first to register and play!</td></tr>';
+            this.tableBody.innerHTML = '<tr><td colspan="5" class="no-data">No players yet. Be the first to register and play!</td></tr>';
             return;
         }
 
@@ -57,41 +57,8 @@ class RankingsTable {
             linesCell.textContent = user.lines || 0;
             row.appendChild(linesCell);
 
-            const avatarCell = document.createElement('td');
-            const avatarDisplay = document.createElement('span');
-            avatarDisplay.className = `avatar-display ${this.getAvatarClass(user.avatar)}`;
-            avatarDisplay.textContent = this.getAvatarSymbol(user.avatar);
-            avatarCell.appendChild(avatarDisplay);
-            row.appendChild(avatarCell);
-
             this.tableBody.appendChild(row);
         });
-    }
-
-    getAvatarClass(avatar) {
-        const typeMap = {
-            'tetromino-i': 'avatar-i',
-            'tetromino-o': 'avatar-o',
-            'tetromino-t': 'avatar-t',
-            'tetromino-s': 'avatar-s',
-            'tetromino-z': 'avatar-z',
-            'tetromino-j': 'avatar-j',
-            'tetromino-l': 'avatar-l'
-        };
-        return typeMap[avatar] || 'avatar-i';
-    }
-
-    getAvatarSymbol(avatar) {
-        const symbolMap = {
-            'tetromino-i': 'I',
-            'tetromino-o': 'O',
-            'tetromino-t': 'T',
-            'tetromino-s': 'S',
-            'tetromino-z': 'Z',
-            'tetromino-j': 'J',
-            'tetromino-l': 'L'
-        };
-        return symbolMap[avatar] || 'I';
     }
 
     updateUserInfo() {
