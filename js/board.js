@@ -1,7 +1,5 @@
 export class Board {
-    constructor(width, height) {
-        this.width = width || 10;
-        this.height = height || 20;}
+    constructor(width = 10, height = 20) {
 
     createEmptyGrid() {
         return Array(this.height).fill(null).map(() => Array(this.width).fill(0));
