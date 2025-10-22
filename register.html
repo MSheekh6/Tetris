@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TETRIS - Register</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/forms.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">TETRIS</div>
+            <ul class="nav-menu">
+                <li><a href="game.html" class="nav-link">GAME</a></li>
+                <li><a href="register.html" class="nav-link active">REGISTER</a></li>
+                <li><a href="login.html" class="nav-link">LOGIN</a></li>
+                <li><a href="rankings.html" class="nav-link">RANKINGS</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Registration Form Container -->
+    <main class="form-container">
+        <div class="form-panel">
+            <h1 class="form-title">REGISTER</h1>
+            <p class="form-subtitle">Create your account to start playing</p>
+
+            <form id="registerForm" novalidate>
+                <!-- Username -->
+                <div class="form-group">
+                    <label for="username" class="form-label">Username *</label>
+                    <input type="text" id="username" name="username" class="form-input" required>
+                    <span class="error-message" id="usernameError"></span>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address *</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                    <span class="error-message" id="emailError"></span>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password" class="form-label">Password *</label>
+                    <input type="password" id="password" name="password" class="form-input" required>
+                    <span class="error-message" id="passwordError"></span>
+                    <span class="form-hint">Minimum 8 characters, including uppercase, lowercase, and number</span>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="form-group">
+                    <label for="confirmPassword" class="form-label">Confirm Password *</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" required>
+                    <span class="error-message" id="confirmPasswordError"></span>
+                </div>
+
+                <!-- Display Name -->
+                <div class="form-group">
+                    <label for="displayName" class="form-label">Display Name *</label>
+                    <input type="text" id="displayName" name="displayName" class="form-input" required>
+                    <span class="error-message" id="displayNameError"></span>
+                </div>
+
+                <!-- Favorite Color -->
+                <div class="form-group">
+                    <label for="favoriteColor" class="form-label">Favorite Tetris Color *</label>
+                    <select id="favoriteColor" name="favoriteColor" class="form-input" required>
+                        <option value="">Select a color...</option>
+                        <option value="cyan">Cyan (I-Piece)</option>
+                        <option value="yellow">Yellow (O-Piece)</option>
+                        <option value="purple">Purple (T-Piece)</option>
+                        <option value="green">Green (S-Piece)</option>
+                        <option value="red">Red (Z-Piece)</option>
+                        <option value="blue">Blue (J-Piece)</option>
+                        <option value="orange">Orange (L-Piece)</option>
+                    </select>
+                    <span class="error-message" id="favoriteColorError"></span>
+                </div>
+
+                <!-- Avatar Choice -->
+                <div class="form-group">
+                    <label class="form-label">Choose Your Avatar *</label>
+                    <div class="avatar-grid">
+                        <label class="avatar-option">
+                            <input type="radio" name="avatar" value="tetromino-i" required>
+                            <span class="avatar-box avatar-i">I</span>
+                        </label>
+                        <label class="avatar-option">
+                            <input type="radio" name="avatar" value="tetromino-o" required>
+                            <span class="avatar-box avatar-o">O</span>
+                        </label>
+                        <label class="avatar-option">
+                            <input type="radio" name="avatar" value="tetromino-t" required>
+                            <span class="avatar-box avatar-t">T</span>
+                        </label>
+                        <label class="avatar-option">
+                            <input type="radio" name="avatar" value="tetromino-s" required>
+                            <span class="avatar-box avatar-s">S</span>
+                        </label>
+                        <label class="avatar-option">
+                            <input type="radio" name="avatar" value="tetromino-z" required>
+                            <span class="avatar-box avatar-z">Z</span>
+                        </label>
+                        <label class="avatar-option">
+                            <input type="radio" name="avatar" value="tetromino-j" required>
+                            <span class="avatar-box avatar-j">J</span>
+                        </label>
+                        <label class="avatar-option">
+                            <input type="radio" name="avatar" value="tetromino-l" required>
+                            <span class="avatar-box avatar-l">L</span>
+                        </label>
+                    </div>
+                    <span class="error-message" id="avatarError"></span>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="arcade-button submit-button">CREATE ACCOUNT</button>
+
+                <!-- Success/Error Messages -->
+                <div class="message-box success-message hidden" id="successMessage"></div>
+                <div class="message-box error-message-box hidden" id="errorMessage"></div>
+
+                <!-- Link to Login -->
+                <div class="form-footer">
+                    Already have an account? <a href="login.html" class="form-link">Login here</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script type="module" src="js/register.js"></script>
+</body>
+</html>
