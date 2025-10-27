@@ -81,9 +81,22 @@
 .error-message {
     display: block;
     font-size: 0.5rem;
-    color: var(--neon-pink);
+    color: #ffffff;
+    background: rgba(255, 0, 234, 0.8);
+    padding: 0.3rem 0.5rem;
+    border-radius: 3px;
     margin-top: 0.5rem;
     min-height: 0.6rem;
+    text-shadow: none;
+    border: 1px solid var(--neon-pink);
+    box-shadow: 0 0 10px rgba(255, 0, 234, 0.5);
+}
+
+.error-message:empty {
+    display: none;
+    padding: 0;
+    border: none;
+    box-shadow: none;
 }
 
 .form-hint {
@@ -163,10 +176,11 @@
 }
 
 .error-message-box {
-    background: rgba(255, 0, 234, 0.1);
+    background: rgba(255, 0, 234, 0.8);
     border: 2px solid var(--neon-pink);
-    color: var(--neon-pink);
-    box-shadow: 0 0 15px rgba(255, 0, 234, 0.3);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 0, 234, 0.5);
+    text-shadow: none;
 }
 
 .hidden {
