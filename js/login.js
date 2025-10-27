@@ -9,10 +9,29 @@ class LoginForm {
     setupEventListeners() {
         this.form.addEventListener('submit', (e) => this.handleSubmit(e));
 
-        const inputs = this.form.querySelectorAll('.form-input');
-        inputs.forEach(input => {
-            input.addEventListener('input', () => this.clearError(input));
-        });
+        const emailInput = document.getElementById('email');
+        emailInput.addEventListener('blur', () => this.validateEmail());
+        emailInput.addEventListener('input', () => this.clearError(emailInput));
+
+        const passwordInput = document.getElementById('password');
+        passwordInput.addEventListener('input', () => this.clearError(passwordInput));
+    }
+
+    validateEmail() {
+        const emailInput = document.getElementById('email');
+        const email = emailInput.value.trim();
+        
+        if (!email) {
+            return false;
+        }
+
+        const emailError = Validator.validateEmail(email);
+        if (emailError) {
+            this.showError('email', emailError);
+            return false;
+        }
+
+        return true;
     }
 
     showError(fieldName, message) {
