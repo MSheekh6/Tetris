@@ -13,11 +13,18 @@ class RankingsTable {
             return;
         }
 
+        // Sort users by high score in descending order
+        const sortedUsers = users.sort((a, b) => {
+            const scoreA = a.highScore || 0;
+            const scoreB = b.highScore || 0;
+            return scoreB - scoreA;
+        });
+
         const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
         this.tableBody.innerHTML = '';
 
-        users.forEach((user, index) => {
+        sortedUsers.forEach((user, index) => {
             const row = document.createElement('tr');
 
             const isCurrentUser = currentUser && currentUser.email === user.email;
