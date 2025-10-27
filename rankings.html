@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TETRIS - Rankings</title>
+    <title>TETRIS - Login</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -14,46 +14,48 @@
             <ul class="nav-menu">
                 <li><a href="game.html" class="nav-link">GAME</a></li>
                 <li><a href="register.html" class="nav-link">REGISTER</a></li>
-                <li><a href="login.html" class="nav-link">LOGIN</a></li>
-                <li><a href="rankings.html" class="nav-link active">RANKINGS</a></li>
+                <li><a href="login.html" class="nav-link active">LOGIN</a></li>
+                <li><a href="rankings.html" class="nav-link">RANKINGS</a></li>
             </ul>
-            <div class="user-info" id="userInfo"></div>
         </div>
     </nav>
 
-    <!-- Rankings Container -->
-    <main class="rankings-container">
-        <div class="rankings-panel">
-            <h1 class="rankings-title">LEADERBOARD</h1>
-            <p class="rankings-subtitle">Top scores from all players</p>
+    <!-- Login Form Container -->
+    <main class="form-container">
+        <div class="form-panel login-panel">
+            <h1 class="form-title">LOGIN</h1>
+            <p class="form-subtitle">Welcome back, player!</p>
 
-            <!-- Rankings Table -->
-            <div class="table-wrapper">
-                <table class="rankings-table" id="rankingsTable">
-                    <thead>
-                        <tr>
-                            <th>RANK</th>
-                            <th>PLAYER</th>
-                            <th>SCORE</th>
-                            <th>LEVEL</th>
-                            <th>LINES</th>
-                        </tr>
-                    </thead>
-                    <tbody id="rankingsBody">
-                        <tr>
-                            <td colspan="5" class="no-data">No players yet. Be the first to register and play!</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <form id="loginForm" novalidate>
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                    <span class="error-message" id="emailError"></span>
+                </div>
 
-            <!-- Back to Game Button -->
-            <div class="rankings-actions">
-                <button class="arcade-button" onclick="window.location.href='game.html'">PLAY GAME</button>
-            </div>
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" name="password" class="form-input" required>
+                    <span class="error-message" id="passwordError"></span>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="arcade-button submit-button">START GAME</button>
+
+                <!-- Success/Error Messages -->
+                <div class="message-box success-message hidden" id="successMessage"></div>
+                <div class="message-box error-message-box hidden" id="errorMessage"></div>
+
+                <!-- Link to Register -->
+                <div class="form-footer">
+                    Don't have an account? <a href="register.html" class="form-link">Register here</a>
+                </div>
+            </form>
         </div>
     </main>
 
-    <script type="module" src="js/rankings.js"></script>
+    <script type="module" src="js/login.js"></script>
 </body>
 </html>
