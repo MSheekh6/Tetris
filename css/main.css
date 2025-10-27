@@ -79,6 +79,7 @@ body::before {
         0 0 20px var(--neon-cyan),
         0 0 30px var(--neon-cyan);
     letter-spacing: 0.2em;
+    order: 1;
 }
 
 .nav-menu {
@@ -86,6 +87,9 @@ body::before {
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
+    order: 2;
+    flex: 1;
+    justify-content: center;
 }
 
 .nav-link {
@@ -114,6 +118,7 @@ body::before {
     color: var(--neon-green);
     font-size: 0.6rem;
     text-shadow: 0 0 10px var(--neon-green);
+    order: 3;
 }
 
 .arcade-button {
@@ -170,6 +175,41 @@ body::before {
     left: 100%;
 }
 
+.how-to-play-btn {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 99;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.65rem;
+    padding: 0.8rem 1.4rem;
+    background: var(--bg-secondary);
+    color: var(--neon-pink);
+    border: 2px solid var(--neon-pink);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    box-shadow:
+        0 0 10px rgba(255, 0, 234, 0.3),
+        inset 0 0 10px rgba(255, 0, 234, 0.1);
+    display: inline-block;
+    text-align: center;
+}
+
+.how-to-play-btn:hover {
+    background: var(--neon-pink);
+    color: var(--bg-primary);
+    box-shadow:
+        0 0 20px rgba(255, 0, 234, 0.6),
+        inset 0 0 20px rgba(255, 0, 234, 0.2);
+    transform: translateY(-2px);
+}
+
+.how-to-play-btn:active {
+    transform: translateY(0);
+}
+
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
@@ -193,6 +233,13 @@ body::before {
         font-size: 0.7rem;
         padding: 0.8rem 1.5rem;
     }
+
+    .how-to-play-btn {
+        font-size: 0.55rem;
+        padding: 0.7rem 1.1rem;
+        top: 70px;
+        right: 15px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -208,5 +255,12 @@ body::before {
     .arcade-button {
         font-size: 0.6rem;
         padding: 0.7rem 1.2rem;
+    }
+
+    .how-to-play-btn {
+        font-size: 0.5rem;
+        padding: 0.6rem 0.9rem;
+        top: 65px;
+        right: 10px;
     }
 }
